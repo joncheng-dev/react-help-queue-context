@@ -4,6 +4,9 @@ import PropTypes from "prop-types";
 
 function ReusableForm(props) {
   const theme = useContext(ThemeContext);
+  if (!theme) {
+    throw new Error("ThemeContext must be used within a ThemeContext.Provider!");
+  }
   // add styles variable.
   const buttonStyles = {
     backgroundColor: theme.buttonBackground,

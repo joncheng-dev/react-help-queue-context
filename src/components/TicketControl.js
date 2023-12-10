@@ -66,6 +66,9 @@ class TicketControl extends React.Component {
     let theme = this.context;
     let currentlyVisibleState = null;
     let buttonText = null;
+    if (!theme) {
+      throw new Error("ThemeContext must be used within a ThemeContext.Provider!");
+    }
     //styles
     const buttonStyles = {
       backgroundColor: theme.buttonBackground,
